@@ -1,0 +1,19 @@
+apiVersion: vendir.k14s.io/v1alpha1
+kind: Config
+directories:
+  - path: vendor
+    contents:
+      - path: local-path-provisioner
+        git:
+          depth: 1
+          url: https://github.com/rancher/local-path-provisioner
+          ref: "v0.0.32"
+        includePaths:
+          - deploy/chart/local-path-provisioner/**/*
+        excludePaths:
+          - "**/registry-secret.yaml"
+  - path: helm/local-path-provisioner
+    contents:
+    - path: .
+      directory:
+        path: vendor/local-path-provisioner/deploy/chart/local-path-provisioner
