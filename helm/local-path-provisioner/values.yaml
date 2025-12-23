@@ -13,7 +13,7 @@ image:
 helperImage:
   registry: gsoci.azurecr.io
   repository: giantswarm/busybox
-  tag: v0.0.32
+  tag: 1.37.0
 
 defaultSettings:
   registrySecret: ~
