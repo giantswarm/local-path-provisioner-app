@@ -3,7 +3,7 @@ apiVersion: v2
 appVersion: 0.0.32
 name: local-path-provisioner
 # giantswarm chart version
-version: 0.0.0
+version: 0.1.0
 description: Dynamically provisioning persistent local storage with Kubernetes
 home: https://github.com/giantswarm/local-path-provisioner-app
 icon: https://s.giantswarm.io/app-icons/giantswarm/1/light.svg
