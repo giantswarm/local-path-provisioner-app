@@ -1,0 +1,12 @@
+diff --git a/helm/local-path-provisioner/templates/_helpers.tpl b/helm/local-path-provisioner/templates/_helpers.tpl
+index cc8429e..1aa4c21 100644
+--- a/helm/local-path-provisioner/templates/_helpers.tpl
++++ b/helm/local-path-provisioner/templates/_helpers.tpl
+@@ -50,6 +50,7 @@ app.kubernetes.io/instance: {{ .Release.Name }}
+ app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+ {{- end }}
+ app.kubernetes.io/managed-by: {{ .Release.Service }}
++io.giantswarm.application.team: {{ index .Chart.Annotations "io.giantswarm.application.team" | quote }}
+ {{- if .Values.commonLabels}}
+ {{ toYaml .Values.commonLabels }}
+ {{- end }}

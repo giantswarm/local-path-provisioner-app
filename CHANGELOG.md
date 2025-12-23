@@ -7,6 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- changed: `app.giantswarm.io` label group was changed to `application.giantswarm.io`
+- Initial sync of upstream chart at version 0.0.32.
 
 [Unreleased]: https://github.com/giantswarm/local-path-provisioner-app/tree/main

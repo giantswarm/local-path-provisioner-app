@@ -1,0 +1,22 @@
+diff --git a/helm/local-path-provisioner/templates/deployment.yaml b/helm/local-path-provisioner/templates/deployment.yaml
+index 789e729..b3c505c 100644
+--- a/helm/local-path-provisioner/templates/deployment.yaml
++++ b/helm/local-path-provisioner/templates/deployment.yaml
+@@ -34,7 +34,7 @@ spec:
+         {{- if .Values.privateRegistry.registryUrl }}
+           image: "{{ .Values.privateRegistry.registryUrl }}/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+         {{- else }}
+-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
++          image: "{{ .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+         {{- end }}
+           imagePullPolicy: {{ .Values.image.pullPolicy }}
+           command:
+@@ -51,7 +51,7 @@ spec:
+           {{- if .Values.privateRegistry.registryUrl }}
+             - "{{ .Values.privateRegistry.registryUrl }}/{{ .Values.helperImage.repository }}:{{ .Values.helperImage.tag }}"
+           {{- else }}
+-            - "{{ .Values.helperImage.repository }}:{{ .Values.helperImage.tag }}"
++            - "{{ .Values.helperImage.registry }}/{{ .Values.helperImage.repository }}:{{ .Values.helperImage.tag }}"
+           {{- end }}
+             - --configmap-name
+             - {{ .Values.configmap.name }}
