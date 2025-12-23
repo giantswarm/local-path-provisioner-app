@@ -15,4 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Update renovate to disable some dependencies.
 
+### Fixed
+
+- Fix values.yaml patching logic.
+
 [Unreleased]: https://github.com/giantswarm/local-path-provisioner-app/tree/main
