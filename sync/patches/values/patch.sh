@@ -24,7 +24,7 @@ git apply "${script_dir_rel}/_values.yaml.patch"
 { set +x; } 2>/dev/null
 
 # then patch the chart values with the upstream version
-sed -i -E "s/tag.*$/tag: ${UPSTREAM_SYNC_VERSION}/" "${CHART_DIR}/values.yaml"
+sed -i -E "s/tag: PLACEHOLDER/tag: ${UPSTREAM_SYNC_VERSION}/" "${CHART_DIR}/values.yaml"
 
 cp "${script_dir_rel}/manifests/values.schema.json" "${CHART_DIR}/values.schema.json"
 
