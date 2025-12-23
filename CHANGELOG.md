@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
 - Initial sync of upstream chart at version 0.0.32.
+
+### Changed
+
+- Update renovate to disable some dependencies.
 
 [Unreleased]: https://github.com/giantswarm/local-path-provisioner-app/tree/main
