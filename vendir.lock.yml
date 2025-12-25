@@ -2,10 +2,10 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'chore(release): bump to v0.0.32...'
-      sha: 53204db98bfadf8a3042bb4dbe618ee1da2eddb5
+      commitTitle: 'chore(release): bump to v0.0.33...'
+      sha: 749f09736ca9c06ef53f74bd97fafb6a7e7a4b1d
       tags:
-      - v0.0.32
+      - v0.0.33
     path: local-path-provisioner
   path: vendor
 - contents:
