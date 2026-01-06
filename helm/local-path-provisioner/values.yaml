@@ -5,13 +5,15 @@ commonLabels: {}
 namespaceOverride: ""
 
 image:
-  repository: rancher/local-path-provisioner
+  registry: gsoci.azurecr.io
+  repository: giantswarm/local-path-provisioner
   tag: v0.0.34
   pullPolicy: IfNotPresent
 
 helperImage:
-  repository: busybox
-  tag: latest
+  registry: gsoci.azurecr.io
+  repository: giantswarm/busybox
+  tag: 1.37.0
 
 defaultSettings:
   registrySecret: ~
@@ -51,6 +53,9 @@ storageClass:
 
   ## allowedTopologies field controls on which nodes the volumes can be dynamically provisioned, an empty value means no topology constraints
   allowedTopologies: []
+
+  ## annotations to add to the StorageClass
+  annotations: {}
 
   ## Set a path pattern, if unset the default will be used
   # pathPattern: "{{ .PVC.Namespace }}-{{ .PVC.Name }}"
