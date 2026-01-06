@@ -32,6 +32,12 @@
               "title": "namespaceOverride",
               "type": "string"
             },
+            "priorityClassName": {
+              "default": "system-node-critical",
+              "description": "Priority class name for the helper pod (defaults to system-node-critical)",
+              "title": "priorityClassName",
+              "type": "string"
+            },
             "tolerations": {
               "items": {
               },
@@ -110,6 +116,11 @@
       },
       "title": "helperPod",
       "type": "object"
+    },
+    "hostUsers": {
+      "default": true,
+      "title": "hostUsers",
+      "type": "boolean"
     },
     "image": {
       "additionalProperties": false,
@@ -202,6 +213,11 @@
       "title": "podSecurityContext",
       "type": "object"
     },
+    "priorityClassName": {
+      "description": "Priority class name for the pod",
+      "title": "priorityClassName",
+      "type": "string"
+    },
     "privateRegistry": {
       "additionalProperties": false,
       "properties": {
@@ -268,6 +284,17 @@
       "additionalProperties": false,
       "description": "# For creating the StorageClass automatically:",
       "properties": {
+        "allowedTopologies": {
+          "description": "# allowedTopologies field controls on which nodes the volumes can be dynamically provisioned, an empty value means no topology constraints",
+          "title": "allowedTopologies",
+          "type": "array"
+        },
+        "annotations": {
+          "additionalProperties": false,
+          "description": "# annotations to add to the StorageClass",
+          "title": "annotations",
+          "type": "object"
+        },
         "create": {
           "title": "create",
           "type": "boolean"

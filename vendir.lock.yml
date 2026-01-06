@@ -2,10 +2,10 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'chore(release): bump to v0.0.32...'
-      sha: 53204db98bfadf8a3042bb4dbe618ee1da2eddb5
+      commitTitle: 'feat: allow specifying additional annotations on StorageClass...'
+      sha: af49f3fdf69e2e5ad790d295b6005ba3767ec991
       tags:
-      - v0.0.32
+      - v0.0.34
     path: local-path-provisioner
   path: vendor
 - contents:
