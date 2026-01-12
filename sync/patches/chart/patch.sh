@@ -15,7 +15,7 @@ echo "Patching chart metadata"
 # we need to get the current version of the chart in order to
 # reset it after copying Chart.yaml over.
 
-CURRENT_CHART_VERSION=$(curl -s https://api.github.com/repos/giantswarm/local-path-provisioner/releases/latest | jq -r .name)
+CURRENT_CHART_VERSION=$(curl -s https://api.github.com/repos/giantswarm/local-path-provisioner-app/releases/latest | jq -r .name)
 # remove leading 'v' if present
 CURRENT_CHART_VERSION="${CURRENT_CHART_VERSION#v}"
 
@@ -31,7 +31,7 @@ UPSTREAM_SYNC_VERSION_STRIPPED="${UPSTREAM_SYNC_VERSION#v}"
 cp "${script_dir}"/manifests/Chart.yaml "${CHART_DIR}/Chart.yaml"
 
 # set the app version in Chart.yaml
-sed -i -E "s/^appVersion.*$/appVersion: ${UPSTREAM_SYNC_VERSION_STRIPPED}/" "${CHART_DIR}/Chart.yaml"
+sed -i -E "s/^appVersion: APP_VERSION_PLACEHOLDER/appVersion: ${UPSTREAM_SYNC_VERSION_STRIPPED}/" "${CHART_DIR}/Chart.yaml"
 
 # set the chart version in Chart.yaml
-sed -i -E "s/^version.*$/version: ${CURRENT_CHART_VERSION}/" "${CHART_DIR}/Chart.yaml"
+sed -i -E "s/^version: VERSION_PLACEHOLDER/version: ${CURRENT_CHART_VERSION}/" "${CHART_DIR}/Chart.yaml"

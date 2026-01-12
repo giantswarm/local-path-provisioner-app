@@ -1,0 +1,43 @@
+{{- if .Capabilities.APIVersions.Has "policy.giantswarm.io/v1alpha1/PolicyException" }}
+apiVersion: policy.giantswarm.io/v1alpha1
+kind: PolicyException
+metadata:
+  annotations:
+    helm.sh/hook: pre-install,pre-upgrade
+  name: {{ include "local-path-provisioner.fullname" . }}
+  namespace: policy-exceptions
+spec:
+  policies:
+  - disallow-capabilities-strict
+  - disallow-privilege-escalation
+  - require-run-as-nonroot
+  - restrict-seccomp-strict
+  targets:
+  - kind: Deployment
+    names:
+    - {{ include "local-path-provisioner.fullname" . }}
+    namespaces:
+    - {{ include "local-path-provisioner.namespace" . }}
+---
+apiVersion: policy.giantswarm.io/v1alpha1
+kind: PolicyException
+metadata:
+  annotations:
+    helm.sh/hook: pre-install,pre-upgrade
+  name: {{ include "local-path-provisioner.fullname" . }}-helper-pod
+  namespace: policy-exceptions
+spec:
+  policies:
+  - disallow-capabilities-strict
+  - disallow-host-path
+  - disallow-privilege-escalation
+  - require-run-as-nonroot
+  - restrict-seccomp-strict
+  - restrict-volume-types
+  targets:
+  - kind: Pod
+    names:
+    - helper-pod-*
+    namespaces:
+    - {{ include "local-path-provisioner.namespace" . }}
+{{- end }}
