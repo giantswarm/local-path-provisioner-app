@@ -1,0 +1,23 @@
+diff --git a/vendor/local-path-provisioner/deploy/chart/local-path-provisioner/values.yaml b/helm/local-path-provisioner/values.yaml
+index a486900..a4838d4 100644
+--- a/vendor/local-path-provisioner/deploy/chart/local-path-provisioner/values.yaml
++++ b/helm/local-path-provisioner/values.yaml
+@@ -5,13 +5,15 @@ commonLabels: {}
+ namespaceOverride: ""
+ 
+ image:
+-  repository: rancher/local-path-provisioner
++  registry: gsoci.azurecr.io
++  repository: giantswarm/local-path-provisioner
+   tag: v0.0.34
+   pullPolicy: IfNotPresent
+ 
+ helperImage:
+-  repository: busybox
+-  tag: latest
++  registry: gsoci.azurecr.io
++  repository: giantswarm/busybox
++  tag: 1.37.0
+ 
+ defaultSettings:
+   registrySecret: ~
