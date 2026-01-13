@@ -30,8 +30,8 @@ UPSTREAM_SYNC_VERSION_STRIPPED="${UPSTREAM_SYNC_VERSION#v}"
 # copy default Chart.yaml to the helm chart directory
 cp "${script_dir}"/manifests/Chart.yaml "${CHART_DIR}/Chart.yaml"
 
-# set the app version in Chart.yaml
-sed -i -E "s/^appVersion: APP_VERSION_PLACEHOLDER/appVersion: ${UPSTREAM_SYNC_VERSION_STRIPPED}/" "${CHART_DIR}/Chart.yaml"
+# set the upstream version in Chart.yaml (for appVersion field and upstream version annotation)
+sed -i -E "s/APP_VERSION_PLACEHOLDER/${UPSTREAM_SYNC_VERSION_STRIPPED}/" "${CHART_DIR}/Chart.yaml"
 
 # set the chart version in Chart.yaml
 sed -i -E "s/^version: VERSION_PLACEHOLDER/version: ${CURRENT_CHART_VERSION}/" "${CHART_DIR}/Chart.yaml"

@@ -10,10 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add GS PolicyException.
+- Add README to `sync` directory.
+- Add GitHub actions workflow to run `sync.sh` on PRs.
 
 ### Changed
 
 - Push to `kamaji-addons-app-collection`.
+- Improve Chart.yaml metadata.
 
 ### Fixed
 
