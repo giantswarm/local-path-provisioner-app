@@ -1,0 +1,12 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: {{ include "local-path-provisioner.fullname" . }}
+  namespace: {{ include "local-path-provisioner.namespace" . }}
+spec:
+  egress:
+  - toEntities:
+    - kube-apiserver
+  endpointSelector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "local-path-provisioner.name" . }}

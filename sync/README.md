@@ -100,6 +100,7 @@ Location: `sync/patches/templates/`
 
 - Patches the upstream `Deployment` and `helperImage` to pull images from Giant Swarm's container registry.
 - Copies over Giant Swarm `PolicyException`s to the chart.
+- Copies a `CiliumNetworkPolicy` to the chart.
 
 ### Values
 
