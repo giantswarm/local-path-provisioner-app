@@ -19,4 +19,4 @@ git apply "${script_dir_rel}/_deployment.yaml.patch"
 
 { set +x; } 2>/dev/null
 
-cp -av "${script_dir_rel}/manifests/policy-exceptions.yaml" "${CHART_DIR}/templates/"
+cp -av "${script_dir_rel}"/manifests/* "${CHART_DIR}/templates/"

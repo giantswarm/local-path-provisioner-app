@@ -1,0 +1,18 @@
+diff --git a/helm/local-path-provisioner/templates/cilium-network-policy.yaml b/helm/local-path-provisioner/templates/cilium-network-policy.yaml
+new file mode 100644
+index 0000000..de5ba73
+--- /dev/null
++++ b/helm/local-path-provisioner/templates/cilium-network-policy.yaml
+@@ -0,0 +1,12 @@
++apiVersion: cilium.io/v2
++kind: CiliumNetworkPolicy
++metadata:
++  name: {{ include "local-path-provisioner.fullname" . }}
++  namespace: {{ include "local-path-provisioner.namespace" . }}
++spec:
++  egress:
++  - toEntities:
++    - kube-apiserver
++  endpointSelector:
++    matchLabels:
++      app.kubernetes.io/name: {{ include "local-path-provisioner.name" . }}
