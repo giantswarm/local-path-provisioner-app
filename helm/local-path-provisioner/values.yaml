@@ -7,7 +7,7 @@ namespaceOverride: ""
 image:
   registry: gsoci.azurecr.io
   repository: giantswarm/local-path-provisioner
-  tag: v0.0.34
+  tag: v0.0.35
   pullPolicy: IfNotPresent
 
 helperImage:
