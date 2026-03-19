@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-03-10
+
 ### Changed
 
 - Update chart to upstream version 0.0.35.
@@ -66,7 +68,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fix values.yaml patching logic.
 
-[Unreleased]: https://github.com/giantswarm/local-path-provisioner-app/compare/v0.4.1...HEAD
+[Unreleased]: https://github.com/giantswarm/local-path-provisioner-app/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/giantswarm/local-path-provisioner-app/compare/v0.4.1...v0.5.0
 [0.4.1]: https://github.com/giantswarm/local-path-provisioner-app/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/giantswarm/local-path-provisioner-app/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/giantswarm/local-path-provisioner-app/compare/v0.3.0...v0.3.1
