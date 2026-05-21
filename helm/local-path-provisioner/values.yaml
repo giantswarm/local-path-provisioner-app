@@ -5,15 +5,13 @@ commonLabels: {}
 namespaceOverride: ""
 
 image:
-  registry: gsoci.azurecr.io
-  repository: giantswarm/local-path-provisioner
-  tag: v0.0.35
+  repository: docker.io/rancher/local-path-provisioner
+  tag: v0.0.36
   pullPolicy: IfNotPresent
 
 helperImage:
-  registry: gsoci.azurecr.io
-  repository: giantswarm/busybox
-  tag: 1.37.0
+  repository: docker.io/library/busybox
+  tag: latest
 
 defaultSettings:
   registrySecret: ~
@@ -194,6 +192,9 @@ configmap:
 
 # Number of retries of failed volume deletion. 0 means retry indefinitely.
 # deletionRetryCount: 15
+
+# Enable debug logging
+debug: false
 
 # Extra arguments to pass to the CLI
 extraArgs: []
