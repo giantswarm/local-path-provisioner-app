@@ -66,6 +66,11 @@
       "title": "configmap",
       "type": "object"
     },
+    "debug": {
+      "description": "Enable debug logging",
+      "title": "debug",
+      "type": "boolean"
+    },
     "defaultSettings": {
       "additionalProperties": false,
       "properties": {
