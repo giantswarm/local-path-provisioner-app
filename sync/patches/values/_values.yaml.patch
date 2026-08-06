@@ -1,23 +1,18 @@
 diff --git a/helm/local-path-provisioner/values.yaml b/helm/local-path-provisioner/values.yaml
-index 0a3874f..6eea658 100644
+index 1511601..3cdfa06 100644
 --- a/helm/local-path-provisioner/values.yaml
 +++ b/helm/local-path-provisioner/values.yaml
-@@ -5,13 +5,15 @@
- namespaceOverride: ""
-
+@@ -7,3 +7,4 @@ namespaceOverride: ""
  image:
 -  repository: docker.io/rancher/local-path-provisioner
 +  registry: gsoci.azurecr.io
 +  repository: giantswarm/local-path-provisioner
-   tag: v0.0.36
-   pullPolicy: IfNotPresent
-
+   tag: v0.0.37
+@@ -12,4 +13,5 @@ image:
  helperImage:
 -  repository: docker.io/library/busybox
 -  tag: latest
 +  registry: gsoci.azurecr.io
 +  repository: giantswarm/busybox
 +  tag: 1.37.0
-
- defaultSettings:
-   registrySecret: ~
+ 

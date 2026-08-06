@@ -1,5 +1,5 @@
 diff --git a/vendor/local-path-provisioner/deploy/chart/local-path-provisioner/values.yaml b/helm/local-path-provisioner/values.yaml
-index 115d400..ae45c0a 100644
+index 1511601..3cdfa06 100644
 --- a/vendor/local-path-provisioner/deploy/chart/local-path-provisioner/values.yaml
 +++ b/helm/local-path-provisioner/values.yaml
 @@ -5,13 +5,15 @@ commonLabels: {}
@@ -9,7 +9,7 @@ index 115d400..ae45c0a 100644
 -  repository: docker.io/rancher/local-path-provisioner
 +  registry: gsoci.azurecr.io
 +  repository: giantswarm/local-path-provisioner
-   tag: v0.0.36
+   tag: v0.0.37
    pullPolicy: IfNotPresent
  
  helperImage:
