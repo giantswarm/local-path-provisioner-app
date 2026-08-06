@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
 - Update vendir https://github.com/rancher/local-path-provisioner to v0.0.37
 
 ## [0.5.0] - 2026-03-10
