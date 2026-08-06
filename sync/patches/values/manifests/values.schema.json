@@ -91,6 +91,10 @@
       "title": "fullnameOverride",
       "type": "string"
     },
+    "health": {
+      "title": "health",
+      "type": "object"
+    },
     "helperImage": {
       "additionalProperties": false,
       "properties": {
@@ -314,14 +318,29 @@
           "title": "defaultVolumeType",
           "type": "string"
         },
+        "groupPattern": {
+          "description": "Set a group pattern for the StorageClass",
+          "title": "groupPattern",
+          "type": "string"
+        },
         "name": {
           "description": "# Set a StorageClass name\n# Ignored if storageClass.create is false",
           "title": "name",
           "type": "string"
         },
+        "permPattern": {
+          "description": "Set a perm pattern for the StorageClass",
+          "title": "permPattern",
+          "type": "string"
+        },
         "reclaimPolicy": {
           "description": "# ReclaimPolicy field of the class, which can be either Delete or Retain",
           "title": "reclaimPolicy",
+          "type": "string"
+        },
+        "userPattern": {
+          "description": "Set a user pattern for the StorageClass",
+          "title": "userPattern",
           "type": "string"
         },
         "volumeBindingMode": {
