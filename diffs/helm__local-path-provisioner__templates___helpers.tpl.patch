@@ -1,7 +1,16 @@
 diff --git a/vendor/local-path-provisioner/deploy/chart/local-path-provisioner/templates/_helpers.tpl b/helm/local-path-provisioner/templates/_helpers.tpl
-index cc8429e..8b95818 100644
+index cc8429e..dba6f29 100644
 --- a/vendor/local-path-provisioner/deploy/chart/local-path-provisioner/templates/_helpers.tpl
 +++ b/helm/local-path-provisioner/templates/_helpers.tpl
+@@ -28,7 +28,7 @@ If release name contains chart name it will be used as a full name.
+ Create chart name and version as used by the chart label.
+ */}}
+ {{- define "local-path-provisioner.chart" -}}
+-{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
++{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimAll "-._" -}}
+ {{- end -}}
+ 
+ {{- define "local-path-provisioner.namespace" -}}
 @@ -50,6 +50,7 @@ app.kubernetes.io/instance: {{ .Release.Name }}
  app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
  {{- end }}

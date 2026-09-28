@@ -18,6 +18,7 @@ vendir sync
 ./sync/patches/helpers/patch.sh
 ./sync/patches/templates/patch.sh
 ./sync/patches/kube-linter/patch.sh
+./sync/patches/chart-label/patch.sh
 
 # clear existing diffs and generate new ones.
 # we clear old diffs out to see if the new sync introduced any changes.
