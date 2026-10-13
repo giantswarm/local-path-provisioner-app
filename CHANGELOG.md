@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Update architect to v10.10.0 (giantswarm/local-path-provisioner-app#79)
+- Add Github action to create an issue in `giantswarm/giantswarm` for Team Rocket on vendir updates.
 
 ### Added
 
