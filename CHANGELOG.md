@@ -7,21 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Fixed
-
-- The `helm.sh/chart` label is valid for long chart versions: the 63-character cut trims the whole trailing run of `-`, `.` and `_`.
-- Fix changelog generation script.
-
-### Changed
-
-- Update architect to v10.10.0 (giantswarm/local-path-provisioner-app#79)
-- Add Github action to create an issue in `giantswarm/giantswarm` for Team Rocket on vendir updates.
-
 ### Added
 
 - Run the sync script automatically on Renovate vendir branches and push the result for review.
 - Add a check which fails a pull request if the sync script was not run.
 - Add shared helpers file to sync dir.
+
+### Changed
+
+- Update architect to v10.10.0 (giantswarm/local-path-provisioner-app#79)
+- Add Github action to create an issue in `giantswarm/giantswarm` for Team Rocket on vendir updates.
+- Use Linux tools to manipulate chart label instead of an inscrutable Perl command.
+
+### Fixed
+
+- The `helm.sh/chart` label is valid for long chart versions: the 63-character cut trims the whole trailing run of `-`, `.` and `_`.
+- Fix changelog generation script.
 
 ## [0.6.0] - 2026-08-06
 
