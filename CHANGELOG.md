@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update carvel-dev/vendir to v0.46.3 (giantswarm/local-path-provisioner-app#96)
 - Update actions/create-github-app-token to v3.3.0 (giantswarm/local-path-provisioner-app#98)
 - Update architect to v10.14.18 (giantswarm/local-path-provisioner-app#99)
+- Update architect to v10.15.1 (giantswarm/local-path-provisioner-app#100)
 
 ### Fixed
 
