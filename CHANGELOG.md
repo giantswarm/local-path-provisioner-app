@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update architect to v10.16.3 (giantswarm/local-path-provisioner-app#101)
 - Update architect to v10.16.6 (giantswarm/local-path-provisioner-app#105)
 - Update architect to v10.16.7 (giantswarm/local-path-provisioner-app#106)
+- Update architect to v10.17.4 (giantswarm/local-path-provisioner-app#113)
 
 ### Fixed
 
