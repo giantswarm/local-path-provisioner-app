@@ -4,11 +4,8 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-repo_dir=$(git rev-parse --show-toplevel) ; readonly repo_dir
-script_dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd ) ; readonly script_dir
-CHART_DIR="${repo_dir}/helm/local-path-provisioner" ; readonly CHART_DIR
-
-cd "${repo_dir}"
+SCRIPT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd ) ; readonly SCRIPT_DIR
+source "${SCRIPT_DIR}"/../../_helpers.sh
 
 echo "Patching chart metadata"
 
@@ -23,12 +20,12 @@ CURRENT_CHART_VERSION="${CURRENT_CHART_VERSION#v}"
 # version being synced from upstream.
 
 # get the upstream sync version from vendir.yml
-UPSTREAM_SYNC_VERSION=$(yq -r .directories[0].contents[0].git.ref ${repo_dir}/vendir.yml)
+UPSTREAM_SYNC_VERSION=$(yq -r .directories[0].contents[0].git.ref ${REPO_DIR}/vendir.yml)
 # strip leading 'v' if present
 UPSTREAM_SYNC_VERSION_STRIPPED="${UPSTREAM_SYNC_VERSION#v}"
 
 # copy default Chart.yaml to the helm chart directory
-cp "${script_dir}"/manifests/Chart.yaml "${CHART_DIR}/Chart.yaml"
+cp "${SCRIPT_DIR}"/manifests/Chart.yaml "${CHART_DIR}/Chart.yaml"
 
 # set the upstream version in Chart.yaml (for appVersion field and upstream version annotation)
 sed -i -E "s/APP_VERSION_PLACEHOLDER/${UPSTREAM_SYNC_VERSION_STRIPPED}/" "${CHART_DIR}/Chart.yaml"
