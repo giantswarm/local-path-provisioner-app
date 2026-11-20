@@ -4,8 +4,18 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd ) ; readonly dir
-cd "${dir}/.."
+SCRIPT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd ) ; readonly SCRIPT_DIR
+cd "${SCRIPT_DIR}/.."
+source "${SCRIPT_DIR}"/_helpers.sh
+
+# Test if required tooling is installed.
+PROGRAMS=("yq" "jq" "vendir")
+for program in "${PROGRAMS[@]}"; do
+    if ! command -v "${program}" &> /dev/null; then
+        echo "${program} not installed; aborting."
+        exit 1
+    fi
+done
 
 set -x
 # Sync using vendir
