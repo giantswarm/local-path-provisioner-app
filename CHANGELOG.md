@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update architect to v10.17.4 (giantswarm/local-path-provisioner-app#113)
 - Update mikefarah/yq to v4.54.3 (giantswarm/local-path-provisioner-app#111)
 - Align vendir configuration and generate values.schema.json on changes.
+- Update architect to v10.19.0 (giantswarm/local-path-provisioner-app#127)
 
 ### Fixed
 
